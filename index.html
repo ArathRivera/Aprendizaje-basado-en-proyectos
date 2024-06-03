@@ -1,68 +1,181 @@
+html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendizaje basado en proyectos</title>
+    <title>Porsche 911</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background: #000;
             color: #fff;
-            padding: 20px;
+            padding: 10px 0;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #f00;
+        }
+        .main-bg {
+            background: url('porsche911.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            animation: zoom 20s infinite alternate;
+            margin-top: 70px;
+        }
+        @keyframes zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
         }
         footer {
-            background-color: #333;
+            background: #000;
             color: #fff;
-            padding: 20px;
             text-align: center;
+            padding: 1rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 20px);
+            height: auto;
+            transition: transform 0.5s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        form label, form input, form textarea, form button {
+            margin-bottom: 10px;
+        }
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        form button {
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Aprendizaje basado en proyectos</h1>
+        <img src="porsche-logo.png" alt="Porsche Logo">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <h2>Introducción</h2>
-        <p>El aprendizaje basado en proyectos es una metodología educativa que pone énfasis en la realización de proyectos prácticos como medio principal de aprendizaje.</p>
-        <p>En este enfoque, los estudiantes trabajan en proyectos significativos que les permiten investigar, colaborar, resolver problemas y aplicar lo que han aprendido en un contexto real.</p>
+    <section class="main-bg" id="inicio">
+        <h1>Descubre el Porsche 911</h1>
+        <p>El icono de la automoción que ha marcado una era.</p>
     </section>
-    <section>
-        <h2>Beneficios</h2>
-        <ul>
-            <li>Promueve la motivación intrínseca de los estudiantes.</li>
-            <li>Fomenta el desarrollo de habilidades de pensamiento crítico y resolución de problemas.</li>
-            <li>Permite la integración de conocimientos de diversas áreas.</li>
-            <li>Prepara a los estudiantes para enfrentar desafíos del mundo real.</li>
-            <li>Promueve la colaboración y el trabajo en equipo.</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Ejemplos</h2>
-        <p>Algunos ejemplos de proyectos de aprendizaje basado en proyectos incluyen:</p>
-        <ul>
-            <li>Diseñar y construir un modelo de energía renovable.</li>
-            <li>Crear una campaña de concienciación sobre un problema social.</li>
-            <li>Organizar un evento cultural en la comunidad.</li>
-            <li>Desarrollar un plan de negocios para una empresa ficticia.</li>
-        </ul>
-    </section>
+    <main class="content">
+        <section id="historia">
+            <h2>Historia del Porsche 911</h2>
+            <p>Desde su fundación, Porsche fabricaba únicamente el modelo 356. Sin embargo, hacia finales de los años 1950, este modelo basado en el Volkswagen Tipo 1 comenzó a mostrar signos de obsolescencia. Mientras desarrollaba las futuras líneas 356 B y C, Porsche inició el proyecto de un nuevo modelo: el Porsche 911.</p>
+            <p>El Porsche 356 tuvo notable éxito fuera de Europa, ganando la Carrera Panamericana en 1952 y 1953. Estas victorias dieron origen a la denominación del modelo. En 1964, algunos modelos con la designación 901 fueron producidos, aunque son raros hoy en día. Desde entonces, la línea ha sido conocida como Porsche 911, manteniendo las formas icónicas de los años 1960, que siguen siendo identificables incluso en modelos recientes como el Cayenne.</p>
+        </section>
+        <section id="modelos">
+            <h2>Tipos de Porsche y Modelos</h2>
+            <p>- <strong>911 S</strong>: Primera variante en incorporar llantas Fuchs y frenos reforzados.</p>
+            <p>- <strong>911 T</strong>: Modelo básico con opciones de transmisión y motor simplificados.</p>
+            <p>- <strong>911 L</strong>: Versión "Luxury" con sutiles cambios en el diseño y equipamiento.</p>
+            <p>- <strong>911 E</strong>: Modelo con inyección, mejor distribución de peso y mejoras en suspensión.</p>
+            <p>- <strong>Porsche 912</strong>: Versión económica con motor de cuatro cilindros, fabricada entre 1965 y 1969, y brevemente en 1976.</p>
+            <p>- <strong>911 R</strong>: Versión de carreras, optimizada para una mejor relación peso-potencia, con muchos elementos aligerados y componentes de fibra de vidrio.</p>
+        </section>
+        <section id="galeria">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="image1.jpg" alt="Porsche 911" class="gallery-img">
+                <img src="image2.jpg" alt="Porsche 911" class="gallery-img">
+                <img src="image3.jpg" alt="Porsche 911" class="gallery-img">
+                <img src="image4.jpg" alt="Porsche 911" class="gallery-img">
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 Aprendizaje basado en proyectos - Todos los derechos reservados.</p>
+        <p>&copy; 2024 Porsche. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/porsche" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com/porsche" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/porsche" target="_blank">Instagram</a>
+        </div>
     </footer>
 </body>
 </html>
